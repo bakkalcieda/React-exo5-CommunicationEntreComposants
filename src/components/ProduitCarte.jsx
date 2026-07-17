@@ -1,8 +1,9 @@
-function ProduitCarte({ nom }) {
+function ProduitCarte({ nom , onSupprimer}) {
     return (
-        <li>
-        <span>{nom}</span>
-        </li>
+    <li>
+    {nom}
+    <button onClick={onSupprimer}>Supprimer</button>
+    </li>
     );
 }
 

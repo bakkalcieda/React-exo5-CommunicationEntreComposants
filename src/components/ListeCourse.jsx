@@ -21,6 +21,11 @@ function ListeCourse() {
         setProduits([...produits, valeur]);
         setTexteInput('');
     }
+
+    function supprimerProduit(index) {
+    const nouvelleListe = produits.filter((_, i) => i !== index);
+    setProduits(nouvelleListe);
+    }
     
     return (
         <div>
@@ -32,11 +37,15 @@ function ListeCourse() {
         placeholder="Nom du produit"
     />
     <button onClick={ajouterProduit}>Ajouter</button>
-        <ul>
+<ul>
         {produits.map((produit, index) => (
-            <ProduitCarte key={index} nom={produit} />
+        <ProduitCarte
+            key={index}
+            nom={produit}
+            onSupprimer={() => supprimerProduit(index)}
+    />
         ))}
-        </ul>
+    </ul>
         </div>
     );
 }
