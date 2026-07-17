@@ -3,7 +3,7 @@ import GestionTaches from './components/GestionTaches';
 
 function App() {
   return (
-    <div>
+    <div className="min-h-screen bg-green-100 p-6 space-y-8">
       <ListeCourse />
       <GestionTaches />
     </div>
